@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shane Parkes Crosby - Marketing & Strategy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="progress" class="progress" aria-hidden="true"></div>
+
+  <header class="header">
+    <div class="container">
+      <div class="navbar">
+        <a class="logo" href="index.html">Shane Parkes Crosby</a>
+        <nav class="nav-links">
+          <a class="btn secondary" href="#blog">Blog</a>
+          <a class="btn secondary" href="#about">About</a>
+          <a class="btn secondary" href="contact.html">Contact</a>
+          <button id="themeToggle" class="btn" type="button" aria-label="Switch theme">
+            <span class="sr-only">Toggle theme</span>
+            <span class="icon" aria-hidden="true">☾</span>
+            <span>Theme</span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Marketing, strategy, and technology, with taste.</h1>
+      <p>
+        I’m an MSc Strategic Management student at UCD Smurfit. I studied Marketing, Innovation and New Technology at DCU,
+        and spent 14 months at Volvo Car Ireland in Marketing and CX.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="#blog">Read the blog <span aria-hidden="true">→</span></a>
+        <a class="btn secondary" href="contact.html">Say hello</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" id="blog">
+    <div class="toolbar">
+      <div class="tagbar" id="tagbar" aria-label="Filter by tag"></div>
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="Search posts…  (⌘K)" autocomplete="off">
+      </div>
+    </div>
+
+    <section class="blog-container">
+      <div class="blog-grid" id="postGrid" aria-live="polite"></div>
+    </section>
+
+    <section id="about" style="padding-bottom: 60px;">
+      <div class="article-shell" style="border-radius: var(--radius-lg);">
+        <div class="article-head" style="padding-bottom: 18px;">
+          <div class="article-meta">A quick note</div>
+          <h2 class="article-title" style="font-size: clamp(1.6rem, 2.5vw, 2.2rem);">About</h2>
+          <p class="article-excerpt">
+            This site is my calm corner of the internet. I write short, opinionated breakdowns of campaigns, positioning, and the technology shaping marketing.
+            The goal is fewer posts, higher signal.
+          </p>
+          <div class="article-actions">
+            <a class="btn secondary" href="contact.html">Contact</a>
+            <a class="btn" href="#blog">Browse posts</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© 2026 Shane Parkes Crosby. Built with care.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

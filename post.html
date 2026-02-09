@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post , Shane Parkes Crosby</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="progress" class="progress" aria-hidden="true"></div>
+
+  <header class="header">
+    <div class="container">
+      <div class="navbar">
+        <a class="logo" href="index.html">Shane Parkes Crosby</a>
+        <nav class="nav-links">
+          <a class="btn secondary" href="index.html#blog">Blog</a>
+          <a class="btn secondary" href="index.html#about">About</a>
+          <a class="btn secondary" href="contact.html">Contact</a>
+          <button id="themeToggle" class="btn" type="button" aria-label="Switch theme">
+            <span class="sr-only">Toggle theme</span>
+            <span class="icon" aria-hidden="true">☾</span>
+            <span>Theme</span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container article-wrap">
+    <div class="article-shell">
+      <div class="article-head">
+        <div class="article-meta">
+          <span id="postDate"></span>
+          <span id="postReadTime"></span>
+          <span id="postTags" style="display:inline-flex; gap:8px; flex-wrap: wrap;"></span>
+        </div>
+
+        <h1 class="article-title" id="postTitle">Loading…</h1>
+        <p class="article-excerpt" id="postExcerpt"></p>
+
+        <div class="article-actions">
+          <button id="copyLink" class="btn secondary" type="button">Copy link</button>
+          <a class="btn" href="index.html#blog">All posts</a>
+        </div>
+      </div>
+
+      <div class="article-body" id="postBody"></div>
+
+      <div class="article-head" style="padding-top: 0;">
+        <div class="article-actions" style="margin-top: 0;">
+          <a id="prevPost" class="btn secondary" href="#"><span>Previous</span></a>
+          <a id="nextPost" class="btn secondary" href="#"><span>Next</span></a>
+        </div>
+        <div style="margin-top: 14px;">
+          <div class="article-meta" style="margin-bottom: 10px;">Related</div>
+          <div id="related" style="display:flex; gap:10px; flex-wrap: wrap;"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© 2026 Shane Parkes Crosby. Built with care.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
