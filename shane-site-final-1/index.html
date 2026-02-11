@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shane Parkes Crosby - Marketing & Strategy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="progress" class="progress" aria-hidden="true"></div>
+
+  <!-- Mobile menu -->
+  <div id="menuBackdrop" class="menu-backdrop" aria-hidden="true"></div>
+  <div id="mobilePanel" class="mobile-panel" aria-hidden="true">
+    <a class="btn secondary" href="#blog">Blog</a>
+    <a class="btn secondary" href="#about">About</a>
+    <a class="btn secondary" href="contact.html">Contact</a>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <div class="navbar">
+        <a class="logo" href="index.html">Shane Parkes Crosby</a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a class="btn secondary" href="#blog">Blog</a>
+          <a class="btn secondary" href="#about">About</a>
+          <a class="btn secondary" href="contact.html">Contact</a>
+        </nav>
+
+        <button id="menuToggle" class="btn menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span>Menu</span>
+          <span aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Hello, I'm Shane.</h1>
+      <p>
+        Welcome to my blog. These are my opinions on marketing, innovation, and strategy.
+      </p>
+      <div class="hero-actions">
+      </div>
+    </div>
+  </section>
+
+  <main class="container" id="blog">
+    <div class="toolbar"></div>
+
+    <section class="blog-container">
+      <div class="blog-grid" id="postGrid" aria-live="polite"></div>
+    </section>
+
+    <!-- About placeholder, we’ll refine later -->
+    <section id="about" style="padding-bottom: 60px;">
+      <div class="article-shell inset">
+        <div class="article-head" style="padding-bottom: 18px;">
+          <div class="article-meta">Coming next</div>
+          <h2 class="article-title" style="font-size: clamp(1.6rem, 2.5vw, 2.2rem);">About</h2>
+          <p class="article-excerpt">
+            We’ll tighten this page next. For now, this section is here so the home page navigation is ready.
+          </p>
+          <div class="article-actions">
+            <a class="btn secondary" href="contact.html">Contact</a>
+            <a class="btn" href="#blog">Browse posts</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© 2026 Shane Parkes Crosby. Built with care.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

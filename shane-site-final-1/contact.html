@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Shane Parkes Crosby</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="progress" class="progress" aria-hidden="true"></div>
+
+  <header class="header">
+    <div class="container">
+      <div class="navbar">
+        <a class="logo" href="index.html">Shane Parkes Crosby</a>
+        <nav class="nav-links" aria-label="Primary">
+          <a class="btn secondary" href="index.html#blog">Blog</a>
+          <a class="btn secondary" href="index.html#about">About</a>
+          <a class="btn secondary" href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="contact-top">
+      <div class="contact-card">
+        <div class="contact-card-inner">
+          <h1>Contact</h1>
+          <p>
+            If you want to chat about a campaign, a project, or anything strategy and marketing, send a note.
+            I reply fastest by email.
+          </p>
+
+          <div class="contact-actions">
+            <!-- Change the email and LinkedIn URL when you’re ready -->
+            <a class="btn icon-btn" href="mailto:shane@example.com">
+              <span class="icon" aria-hidden="true">✉︎</span>
+              <span>Email</span>
+            </a>
+            <a class="btn secondary icon-btn" href="#" onclick="return false;">
+              <span class="icon" aria-hidden="true">in</span>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="letter-wrap">
+      <div class="letter">
+        <div class="letter-inner">
+          <div class="letter-title">
+            <h2>Say Hello.</h2>
+            <div class="hint">Opens a drafted email in your mail app</div>
+          </div>
+
+          <form id="helloForm" autocomplete="on">
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required>
+              </div>
+
+              <div class="field">
+                <label for="fromEmail">Email</label>
+                <input id="fromEmail" name="fromEmail" type="email" placeholder="you@example.com" required>
+              </div>
+
+              <div class="field span-2">
+                <label for="subject">Subject</label>
+                <input id="subject" name="subject" type="text" placeholder="Quick question" required>
+              </div>
+
+              <div class="field span-2">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Write your message here…" required></textarea>
+              </div>
+            </div>
+
+            <div class="letter-actions">
+              <button class="btn" type="submit">
+                <span class="icon" aria-hidden="true">↗</span>
+                <span>Open email draft</span>
+              </button>
+
+              <button class="btn secondary" type="button" id="copyDraft">
+                <span class="icon" aria-hidden="true">⎘</span>
+                <span>Copy draft</span>
+              </button>
+            </div>
+
+            <p class="small-note" style="margin-top:12px;">
+              This is a static site, so it can’t send email directly. Instead it creates a ready-to-send draft addressed to me.
+              If your device doesn’t support mailto, use “Copy draft” and paste it into any email app.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© 2026 Shane Parkes Crosby.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (function(){
+      // Change this to your real email before publishing
+      const TO_EMAIL = "shane@example.com";
+
+      const form = document.getElementById("helloForm");
+      const toast = document.getElementById("toast");
+
+      function showToast(text){
+        if (!toast) return;
+        toast.textContent = text;
+        toast.classList.add("show");
+        window.clearTimeout(showToast._t);
+        showToast._t = window.setTimeout(() => toast.classList.remove("show"), 1400);
+      }
+
+      function buildDraft(){
+        const name = document.getElementById("name").value.trim();
+        const fromEmail = document.getElementById("fromEmail").value.trim();
+        const subject = document.getElementById("subject").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        const body =
+`Hi Shane,
+
+${message}
+
+—
+${name}
+${fromEmail}`;
+
+        return { subject, body };
+      }
+
+      form.addEventListener("submit", function(e){
+        e.preventDefault();
+        const { subject, body } = buildDraft();
+
+        const mailto = "mailto:" + encodeURIComponent(TO_EMAIL)
+          + "?subject=" + encodeURIComponent(subject)
+          + "&body=" + encodeURIComponent(body);
+
+        window.location.href = mailto;
+      });
+
+      document.getElementById("copyDraft").addEventListener("click", async function(){
+        const { subject, body } = buildDraft();
+        const full = `To: ${TO_EMAIL}
+Subject: ${subject}
+
+${body}`;
+        try{
+          await navigator.clipboard.writeText(full);
+          showToast("Copied");
+        }catch{
+          showToast("Copy failed");
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
